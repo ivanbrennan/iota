@@ -23,7 +23,7 @@ if &term =~ 'xterm\|tmux\|screen\|builtin_gui'
   \ 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q',
   \ 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '{', '}']
   for s:c in s:chars
-    exec 'set <M-'.s:c.'>=\<Esc>'.s:c
+    exec "set <M-".s:c.">=\<Esc>".s:c
   endfor
   unlet s:c s:chars
   " These keys can't be set using exec
