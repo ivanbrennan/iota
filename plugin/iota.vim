@@ -14,14 +14,15 @@ endif
 if &term =~ 'xterm\|tmux\|screen\|builtin_gui'
   " Most modern terminals run in 7-bit mode, representing a Meta modifier by
   " prepending an Esc byte (0x1B). Set some Meta key options accordingly.
+  " Note: <M-O> is not possible without breaking arrows in Insert mode.
   let s:chars = [
   \ '&', "'", '(', '*', '+', ',', '-', '/', '0', '1', '2',
   \ '3', '4', '5', '6', '7', '8', '9', ':', ';', '=', '?',
   \ 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K',
-  \ 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V',
-  \ 'W', 'X', 'Y', 'Z', '_', 'a', 'b', 'c', 'd', 'e', 'f',
-  \ 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q',
-  \ 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '{', '}']
+  \ 'L', 'M', 'N', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W',
+  \ 'X', 'Y', 'Z', '_', 'a', 'b', 'c', 'd', 'e', 'f', 'g',
+  \ 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r',
+  \ 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '{', '}']
   for s:c in s:chars
     exec "set <M-".s:c.">=\<Esc>".s:c
   endfor
