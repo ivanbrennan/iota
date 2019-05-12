@@ -11,7 +11,7 @@ elseif &term =~ '8bit'
   finish
 endif
 
-if &term =~ 'xterm\|tmux\|screen\|builtin_gui'
+if &term =~ 'xterm\|tmux\|screen\|builtin_gui\|alacritty'
   " Most modern terminals run in 7-bit mode, representing a Meta modifier by
   " prepending an Esc byte (0x1B). Set some Meta key options accordingly.
   " Note: <M-O> is not possible without breaking arrows in Insert mode.
