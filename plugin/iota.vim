@@ -51,17 +51,21 @@ if &term =~ 'xterm\|tmux\|screen\|builtin_gui\|alacritty'
     exec 'map! '. s:fnkey .' '. s:key
   endfor
   unlet s:key s:escSeq s:fnkey s:keys
+
+  " extended mouse mode
+  set ttymouse=xterm2
 endif
 
-" extended mouse mode
+if &term =~ '^\%(tmux\|screen\|alacritty\)'
+  " Fix true color
+  set t_8f=[38;2;%lu;%lu;%lum
+  set t_8b=[48;2;%lu;%lu;%lum
+endif
+
 if &term =~ '^\%(tmux\|screen\)'
-  set ttymouse=xterm2
-  " Fix behavior of modified arrows in tmux.
+  " Fix behavior of modified arrows
   set    <xUp>=[1;*A
   set  <xDown>=[1;*B
   set <xRight>=[1;*C
   set  <xLeft>=[1;*D
-  " Fix true color in tmux
-  set t_8f=[38;2;%lu;%lu;%lum
-  set t_8b=[48;2;%lu;%lu;%lum
 endif
