@@ -53,7 +53,7 @@ if &term =~ 'xterm\|tmux\|screen\|builtin_gui\|alacritty\|st-'
   unlet s:key s:escSeq s:fnkey s:keys
 
   " extended mouse mode
-  set ttymouse=xterm2
+  set ttymouse=sgr
 endif
 
 if &term =~ '^\%(tmux\|screen\|alacritty\|st-\)'
