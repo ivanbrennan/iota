@@ -56,7 +56,7 @@ if &term =~ 'xterm\|tmux\|screen\|builtin_gui\|alacritty\|st-'
   set ttymouse=xterm2
 endif
 
-if &term =~ '^\%(tmux\|screen\|alacritty\)'
+if &term =~ '^\%(tmux\|screen\|alacritty\|st-\)'
   " Fix true color
   set t_8f=[38;2;%lu;%lu;%lum
   set t_8b=[48;2;%lu;%lu;%lum
