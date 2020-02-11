@@ -11,7 +11,7 @@ elseif &term =~ '8bit'
   finish
 endif
 
-if &term =~ 'xterm\|tmux\|screen\|builtin_gui\|alacritty\|st-'
+if &term =~ 'xterm\|tmux\|screen\|builtin_gui\|alacritty\|st-\|kitty'
   " Most modern terminals run in 7-bit mode, representing a Meta modifier by
   " prepending an Esc byte (0x1B). Set some Meta key options accordingly.
   " Note: <M-O> is not possible without breaking arrows in Insert mode.
@@ -70,7 +70,7 @@ if &term =~ '^\%(tmux\|screen\)'
   set  <xLeft>=[1;*D
 endif
 
-if &term =~ '256color'
+if &term =~ '256color\|kitty'
   " disable Background Color Erase (BCE) so that color schemes
   " render properly when inside 256-color tmux and GNU screen.
   " see also http://sunaku.github.io/vim-256color-bce.html
