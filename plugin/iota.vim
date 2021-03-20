@@ -62,7 +62,7 @@ if &term =~ '^\%(tmux\|screen\|alacritty\|st-\)'
   set t_8b=[48;2;%lu;%lu;%lum
 endif
 
-if &term =~ '^\%(tmux\|screen\)'
+if &term =~ '^\%(alacritty-direct\|tmux\|screen\)'
   " Fix behavior of modified arrows
   set    <xUp>=[1;*A
   set  <xDown>=[1;*B
